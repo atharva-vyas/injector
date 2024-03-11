@@ -1,0 +1,24 @@
+Windows =>
+g++ -shared -m64 -o payload.dll payload.cpp
+g++ -m64 -o main.exe main.cpp
+
+g++ -m64 -static-libgcc -static-libstdc++ -static -o injector.exe injector.cpp -lShlwapi
+g++ -shared -m64 -o hello_world.dll hello_world.cpp
+
+Linux =>
+new:
+x86_64-w64-mingw32-g++ -o injector.exe injector.cpp -m64 -static-libgcc -static-libstdc++ -static -lShlwapi -mwindows -c
+x86_64-w64-mingw32-g++ hello_world.cpp -o hello_world.dll -mwindows -c
+
+old:
+x86_64-w64-mingw32-g++ injector.cpp -o injector.exe -mwindows -static-libgcc -static-libstdc++
+x86_64-w64-mingw32-g++ hello_world.cpp -o hello_world.dll -mwindows
+
+Components in Linux =>
+-m64
+-static-libgcc
+-static-libstdc++
+-static
+-lShlwapi
+-c
+-mwindows
