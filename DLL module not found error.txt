@@ -1,0 +1,7 @@
+DLL module not found error (try a mix of these things): 
+https://stackoverflow.com/a/59495428
+https://stackoverflow.com/a/38561243
+https://stackoverflow.com/a/69371754
+
+This error is caused by not having c++ dependencies installed. (Visual Studio Build tools.) (More specifically the MSVC build tools, and the Windows SDK. Which are the first two options.)
+We can go around this by packing the DLL with all the neccesary dependencies. You can do that by reading the answers above
