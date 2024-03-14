@@ -1,0 +1,6 @@
+g++ -shared -m64 -o payload.dll payload.cpp
+g++ -m64 -o main.exe main.cpp
+
+
+g++ -m64 -static-libgcc -static-libstdc++ -static -o injector.exe injector.cpp -lShlwapi
+g++ -shared -m64 -o hello_world.dll hello_world.cpp

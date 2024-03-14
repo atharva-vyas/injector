@@ -1,0 +1,2 @@
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /v "debugger" /d "%Windir%\System32\taskmgr.exe" /f
+Undo: reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /va /f
